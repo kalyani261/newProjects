@@ -1,0 +1,232 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>W3.CSS</title>
+
+
+<style>
+
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header{
+   /* background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../images/cake.jpg');*/
+    /*to make image little bit black we use linear gradient*/
+    
+    height:100vh;
+    background-size: cover; /*to cover whole page*/
+    background-repeat: no-repeat; /*it used to remove repeat of image on background*/
+}
+
+
+.body
+{
+    font-size: 20px; /*--By default size*/
+    overflow-x: hidden;
+    color:#fff;
+    font-family: 'Flamenco', cursive;
+}
+
+.mySlides
+{
+    background-size: cover;
+ 
+    width:100%;
+    height:100vh;
+    background: transparent;
+    background-repeat: no-repeat;
+}
+
+.clearfix::after  /*IT is used to element to be floated horizontally.......after float and float right*/
+{
+    content: ".";
+    visibility: hidden;
+    display: block; /*all contents are shown in  one line*/
+    height: 0px;
+    clear:both; /*means both side completed float left and float right */
+}
+
+.row
+{
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.main-nav
+{
+float: right;
+margin-top: 60px;
+
+}
+.main-nav li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 40px;
+    position: relative;
+}
+.main-nav li a{
+    padding: 5px 0;
+    color:rgb(14, 2, 2);
+    text-decoration: none;   /*to remove underline*/
+    text-transform: uppercase;
+    font-size: 90%;
+    font-weight: 100;
+    display:inline-block;
+}
+.main-nav li a:hover{
+    border-bottom: 1px solid #bf55ec;
+}
+
+
+
+
+	.mainHeader{
+    width: 1180px;
+    position:absolute; /*its considers header as its relative and adjust according to header*/
+    top:50%;
+    left:50%;
+    /*border:1px solid red;*/
+    transform: translate(-50%,-50%);/*it will adjust text perfectly on scrren means horizontally and vertically..*/
+
+}
+
+h1
+{
+    color:#fff;
+    font-size: 240%;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    margin-bottom:20px ;
+    text-transform:uppercase ;
+    font-weight: lighter;
+}
+
+.btn
+{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: lighter;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s,color 0.2;
+}
+
+
+.btn-full
+{
+    background-color: transparent;
+    color:#060108;
+    margin-right:15px;
+    
+    border:1px solid  ;
+}
+
+
+.btn-full:hover{
+    background-color:#fff;
+}
+
+.btn-nv
+{
+background-color: transparent;
+color:#060108;
+border:1px solid  #bf55ec;
+}
+
+.btn-nv:hover{
+    background-color: #bf55ec;
+}
+.clrchng
+{
+    animation: clrchngt 1s infinite;
+}
+@keyframes clrchngt
+{
+    0%{color: red;}
+    25%{color: purple;}
+    
+    50%{color: black;
+
+    }
+    100%{color: purple;}
+}
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+<header>
+<nav>
+<div class="row clearfix">
+                   <!-- <img src="images/cake.jpg" class="fullimg"> -->
+
+                    <ul class="main-nav">
+                       <li> <a href="#">Home</a></li>
+                       <li> <a href="#">About Us</a></li>
+                       <li> <a href="#">Drop Down</a></li>
+                       <li> <a href="#">Gallery</a></li>
+                       <li> <a href="#">Contact Us</a></li>
+                      <!--<li> <a href="file:///C:/Users/Anu/Desktop/BasicWEb/chekmore.html">Check more</a></li>
+                       <li> <a href="file:///C:/Users/Anu/Desktop/BasicWEb/signup.html#">Sign up</a></li>-->
+                    </ul>
+                </div>
+</nav>
+<div class="w3-content w3-section">
+  <img class="mySlides" src="images/cake2.jpg">
+  <img class="mySlides" src="images/cake3.jpg">
+  <img class="mySlides" src="images/cake4.jpg">
+</div>
+
+<div class="mainHeader">
+            
+            <h1><b>Welcome to <span class="clrchng">Marvellous Cafe</span>.<br>
+                House of cake lover oo yes</b>
+            </h1>
+            <a href="#" class="btn btn-full">Click to order</a>
+            <a href="#" class="btn btn-nv">Show Me More</a>
+ 
+       </div>	
+
+</header>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>
